@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Burger Express</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans&display=swap" rel="stylesheet">
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+
+  <!-- Custom Tailwind Config -->
+  <script src="./JS/tailwind_config.js"></script>
+  <!-- <link rel="stylesheet" href="./styles/tailwind-all.min.css"> -->
+  <link rel="stylesheet" href="./styles/tailwind-all.min.css">
+  <link rel="shortcut icon" href="./Images/logo.png" type="image/x-icon">
+</head>
+
+<body class="font-opensans text-deep-black md:text-[18px] overflow-x-hidden bg-body-color">
+
+<!-- ✅ NAVBAR -->
+<header class="bg-white shadow-md px-4 md:px-10 py-4 relative z-50">
+  <div class="flex justify-between items-center">
+
+    <!-- Logo + Titre -->
+    <div class="flex items-center space-x-2">
+      <img src="./Images/logo.png" class=" w-32 h-12 md:w-40 md:h-20" alt="Burger Logo">
+    </div>
+
+    <!-- Menu Desktop -->
+    <nav class="hidden md:flex space-x-6 font-semibold">
+      <a href="./index.html" class="text-red-express hover:text-mustard transition">Accueil</a>
+      <a href="./Pages/about.html" class="hover:text-mustard transition">À propos</a>
+      <a href="./index.html#section_produit" class="hover:text-mustard transition">Nos produits</a>
+      <a href="./Pages/contact.html" class="hover:text-mustard transition">Contact</a>
+    </nav>
+
+    <!-- CTA -->
+    <a href="https://wa.me/237674606328?text=Salut j'ai besoin de reserver Un de vos produit !" class="hidden md:block bg-mustard text-white px-4 py-2 rounded font-semibold hover:bg-red-express transition">
+      Réservation
+    </a>
+
+    <!-- Menu mobile (hamburger) -->
+    <button id="menu-btn" class="md:hidden text-3xl text-red-express focus:outline-none">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- Menu Mobile -->
+  <div id="mobile-menu" class="md:hidden hidden flex flex-col bg-white mt-4 rounded shadow px-4 py-4 space-y-3 font-semibold">
+    <a href="./index.html" class="text-red-express">Accueil</a>
+    <a href="./Pages/about.html">À propos</a>
+    <a href="#produit">Nos produits</a>
+    <a href="./Pages/contact.html">Contact</a>
+    <a href="https://wa.me/237674606328?text=Salut j'ai besoin de reserver Un de vos produit !" class="bg-mustard text-white px-4 py-2 rounded text-center hover:bg-red-express transition">Réservation</a>
+  </div>
+</header>
+
+<!-- ✅ EXPLICATION FLEXBOX -->
+<!-- 
+- `flex` = active Flexbox sur le container.
+- `justify-between` = espace maximal entre les éléments (logo à gauche, nav au centre/droite, bouton à droite).
+- `items-center` = aligne verticalement tous les enfants au centre de la hauteur.
+- `space-x-2` ou `space-x-6` = ajoute de l'espacement horizontal entre les éléments.
+-->
+
+<!-- ✅ HERO SECTION -->
+<section class="relative text-white">
+  <img src="./Images/bg_home.jpg" alt="Burger Hero" class="w-full h-[500px] object-cover">
+  <div class="absolute inset-0  bg-black bg-opacity-60 flex flex-row justify-between items-center px-6 md:px-20">
+    <div class=" flex flex-col gap-2 md:w-[70%] ">
+        <h1 class="text-3xl md:text-5xl font-montserrat font-bold mb-4">
+          Bienvenue chez <span class="text-mustard">Burger <span class="text-red-express">Express</span></span>
+        </h1>
+        <p class="mb-6 text-lg">Laissez-vous emporter par le goût authentique du burger fait maison. 🍔✨</p>
+        <div class="flex  mt-3  gap-3 md:gap-10">
+          <a href="#section_produit" class="bg-mustard text-white px-4 py-2 rounded hover:bg-red-express transition">Commander <span class="hidden md:inline">maintenant</span></a>
+          <a href="#about" class="border border-mustard border-2 bg-white px-4 py-2 rounded hover:bg-mustard hover:text-white transition text-mustard font-medium">En savoir plus</a>
+        </div>
+    </div>
+    <div class="md:w-[30%]  hidden md:flex ">
+        <img src="./Images/burger1.png" alt="burger home">
+    </div>
+  </div>
+</section>
+<!-- section apropos -->
+<section id="about">
+    <div class="w-fit mx-auto flex gap-2  justify-center items-center flex-col mt-5">
+        <h1 class="text-red-express text-2xl font-bold">Apropos de nous</h1>
+        <span class="h-1 w-[70%] bg-red-express"></span>
+    </div>
+    <div class="flex flex-col w-full md:flex-row justify-between items-center gap-4 md:gap-20 my-5  px-6 md:px-20">
+              <div class="flex gap-10 flex-col w-full md:w-1/2 mt-3">
+                    <p class="text-justify">
+                      📍 Basé à Logpom, Douala, Burger Express vous propose des burgers faits maison, savoureux et prêts en un éclair. Fraîcheur, qualité et service rapide  c’est notre promesse.Commandez maintenant et savourez la différence. 
+                    </p>
+                    <div class="flex gap-4 md:gap-10 items-center justify-start">
+                        <a href="./Pages/about.html" class="bg-mustard text-white px-2 md:px-4 py-2 rounded text-center hover:bg-red-express transition">En savoir plus</a>
+                        <a href="https://wa.me/674606328?text=Salut quelles sont les services que vous proposer?" class="bg-mustard text-white px-2 md:px-4 py-2 rounded text-center hover:bg-red-express transition" target="_blank">Nous Contacter</a>
+                    </div>
+                 </div>
+                 <div class="w-full md:w-1/3  mt-3">
+                       <img src="./Images/about_image.jpg" class="w-full  h-80" alt="image about">
+                 </div>
+            </div>
+    </div>
+</section>
+<!-- section produit -->
+<section id="section_produit">
+  <div class="w-fit mx-auto flex gap-2  justify-center items-center flex-col my-4">
+      <h1 class="text-red-express text-2xl font-bold">Nos produit</h1>
+      <span class="h-1 w-[70%] bg-red-express"></span>
+  </div>
+  <div  class="flex flex-col w-full md:flex-row justify-between items-center gap-4 md:gap-20 my-5  px-6 md:px-20">
+            <div class="flex gap-10 flex-col w-full  mt-3">
+                  <p class="text-justify">
+                    
+                    Des burgeurs de bonne qualité conçu pour vous faire savourer le gout de la patisserie locale
+                    faite le choix de vos articles et commander des maitenants via whatsapp en cliquant sur le bouton 
+                    commander .
+                  </p>
+                  <div class="flex gap-4 sm:gap-10 items-center justify-center px-5">
+                       <a onclick="LoadProduct(Product_filter('all'))" class="flex flex-col gap-0 justify-center items-center cursor-pointer ">
+                        <i class="fa-solid fa-burger sm:text-3xl text-mustard font-bold"></i>
+                          <span class="text-mustard font-bold text-base">Tous</span>
+                          <span class="h-1 w-[120%] bg-mustard"></span>
+                       </a>
+                       <a onclick="LoadProduct(Product_filter('Burger'))" class="flex flex-col gap-0 justify-center items-center cursor-pointer hover:text-mustard transition font-bold">
+                         
+                          <i class="fa-solid fa-burger sm:text-3xl  font-bold"></i>
+                          <span class=" font-bold text-base ">Burgers</span>
+                       </a>
+                       <a onclick="LoadProduct(Product_filter('Jus'))" class="flex flex-col gap-0 justify-center items-center cursor-pointer hover:text-mustard transition font-bold">
+                          <i class="fa-solid fa-mug-hot sm:text-3xl font-bold"></i>
+                          <span class=" font-bold text-base">Boissons</span>
+                          <span class="h-1 w-[120%] bg-mustard hidden"></span>
+                       </a>
+                       <a  onclick="LoadProduct(Product_filter('complement'))" class="flex flex-col gap-0 justify-center items-center cursor-pointer hover:text-mustard transition font-bold">
+                          <i class="fa-solid fa-cookie-bite sm:text-3xl font-bold"></i>
+                          <span class=" font-bold">Compléments</span>
+                          <span class="h-1 w-[120%] bg-mustard hidden"></span>
+                       </a>
+                  </div>
+                  <div id="produit_liste" class="flex w-full justify-center sm:justify-between items-center gap-6 lg:gap-14 flex-wrap " id="box-section">
+                      <!-- <div class="flex flex-col gap-1 p-5  sm:w-[18%] min-w-min bg-footer-gray justify-center shadow rounded-lg " id="box">
+                          <img src="./Images/burger1.png" alt="img burger" class="w-50 h-24 mx-auto  scale- ">
+                          <h2 class="text-red-express text-center">Classic Express</h2>
+                          <div class="flex justify-between items-center gap-2">
+                             <div class="flex gap-2 items-center">
+                                <span class="text-white">4</span>
+                                <i class="fa-solid fa-star text-mustard"></i>
+                             </div>
+                              <span class="text-white">2500F</span>
+                          </div>
+                          <a href="#" class="bg-mustard text-white  py-0 rounded hover:bg-red-express transition flex gap-4 items-center justify-start px-3"> <i class="fab fa-whatsapp text-3xl text-white"></i>Commander</a>
+                      </div> -->
+                      <!-- liste produit ajouter dynamiquement ici par Javascript -->
+                  </div>
+               </div>
+          </div>
+  </div>
+</section>
+<!-- section call to action -->
+ <section id="actions" class="flex flex-col gap-4 px-6 md:px-20 my-4">
+    <div class="flex gap-2 justify-center items-center my-3">
+       <img src="./Images/burger1.png" class="w-10 h-10" alt="burger image">
+       <h1 class="text-red-express font-bold md:text-2xl">
+         Et si ce soir , vous mangiez vraiment bien ?
+       </h1>
+    </div>
+    <p class="text-justify">
+      Chez Burger Express, la qualité rencontre la rapidité.Des burgers savoureux, préparés à la commande, livrés là où vous êtes.📲 Commandez maintenant sur WhatsApp et régalez-vous en quelques minutes !
+
+    </p>
+    <div class="flex justify-center items-center my-4">
+      <a href="https://wa.me/674606328" class="bg-mustard text-white  py-1 rounded hover:bg-red-express transition flex gap-4 items-center justify-start px-3"> <i class="fab fa-whatsapp text-3xl text-white"></i>Commander maintenant</a>
+    </div>
+ </section>
+<!-- ✅ FOOTER (passé en FLEX) -->
+<footer class="bg-footer-gray text-white mt-12 px-3">
+  <div class="w-full  px-4 py-10 flex flex-col md:flex-row justify-between gap-6 text-[18px]">
+    <!-- Colonne 1 -->
+    <div class="flex flex-col space-y-2">
+      <div class="flex items-center space-x-2">
+        <img src="./Images/logo.png" class="w-32 h-12 md:w-40 md:h-16" >
+      </div>
+      <p class="flex items-center">
+        <i class="fas fa-map-marker-alt text-mustard mr-2"></i> Douala, Cameroun
+      </p>
+    </div>
+    <!-- Colonne 2 -->
+    <div class="flex flex-col space-y-2">
+      <h3 class="text-white font-semibold">Contact</h3>
+      <p class="flex items-center">
+        <i class="fas fa-envelope text-mustard mr-2"></i> burgerexpress@gmail.com
+      </p>
+      <p class="flex items-center">
+        <i class="fas fa-phone-alt text-mustard mr-2"></i> 674606328 / 695220691
+      </p>
+    </div>
+    <!-- Colonne 3 -->
+    <div class="flex flex-col space-y-2">
+      <h3 class="text-white font-semibold">Réseaux sociaux</h3>
+      <div class="flex space-x-4 text-mustard text-lg">
+        <a href="#"><i class="fab fa-instagram hover:text-white"></i></a>
+        <a href="#"><i class="fab fa-facebook hover:text-white"></i></a>
+        <a href="#"><i class="fab fa-tiktok hover:text-white"></i></a>
+        <a href="https://wa.me/237674606328"><i class="fab fa-whatsapp hover:text-white"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="border-t border-mustard text-xs text-center py-3 px-4 flex flex-col md:flex-row justify-between items-center">
+    <span>&copy; 2025 Burger Express</span>
+    <span >Tout droit réservé • Designé par <a target="_blank" class="text-mustard" href="http://dimidevofficiel.vercel.app">Dimidev</a></span>
+  </div>
+</footer>
+
+<script src="./JS/script.js"></script>
+<script src="./JS/product.js"></script>
+</body>
+</html>

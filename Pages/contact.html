@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Burger Express</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans&display=swap" rel="stylesheet">
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" ></script>
+  <!-- Custom Tailwind Config -->
+  <script src="../JS/tailwind_config.js"></script>
+  <link rel="stylesheet" href="../styles/tailwind-all.min.css">
+  <link rel="shortcut icon" href="../Images/logo.png" type="image/x-icon">
+</head>
+
+<body class="font-opensans text-gray-800 text-[18px] bg-body-color w-[100vw] overflow-x-hidden">
+
+<!-- ✅ NAVBAR -->
+<header class="bg-white shadow-md px-4 md:px-10 py-4 relative z-50">
+  <div class="flex justify-between items-center">
+
+    <!-- Logo + Titre -->
+    <div class="flex items-center space-x-2">
+      <img src="../Images/logo.png" class=" w-32 h-12 md:w-40 md:h-20" alt="Burger Logo">
+    </div>
+
+    <!-- Menu Desktop -->
+    <nav class="hidden md:flex space-x-6 font-semibold">
+      <a href="../index.html" class="text-red-express hover:text-mustard transition">Accueil</a>
+      <a href="./about.html" class="hover:text-mustard transition">À propos</a>
+      <a href="../index.html#section_produit" class="hover:text-mustard transition">Nos produits</a>
+      <a href="./contact.html" class="hover:text-mustard transition">Contact</a>
+    </nav>
+
+    <!-- CTA -->
+    <a href="https://wa.me/237674606328?text=Salut j'ai besoin de reserver Un de vos produit !" class="hidden md:block bg-mustard text-white px-4 py-2 rounded font-semibold hover:bg-red-express transition">
+      Réservation
+    </a>
+
+    <!-- Menu mobile (hamburger) -->
+    <button id="menu-btn" class="md:hidden text-3xl text-red-express focus:outline-none">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- Menu Mobile -->
+  <div id="mobile-menu" class="md:hidden hidden flex flex-col bg-white mt-4 rounded shadow px-4 py-4 space-y-3 font-semibold">
+    <a href="../index.html" class="text-red-express">Accueil</a>
+    <a href="./about.html">À propos</a>
+    <a href="../index.html#produit">Nos produits</a>
+    <a href="./contact.html">Contact</a>
+    <a href="https://wa.me/237674606328?text=Salut j'ai besoin de reserver Un de vos produit !" class="hidden md:block bg-mustard text-white px-4 py-2 rounded font-semibold hover:bg-red-express transition">
+      Réservation
+    </a>
+  </div>
+</header>
+
+<!-- section contact ici -->
+<section class="w-[100vw]">
+  <!-- entete -->
+  <header class="w-full py-4 flex justify-center items-center gap-10 mt-10">
+    <img src="./../Images/scintillait 1.png" class="w-14 mb-14" alt="">
+    <a href="https://wa.me/237674606328?text=Salut Vos produits m'interresse ." class="text-xl bg-mustard hover:bg-red-express font-semibold w-48 text-center rounded-full text-white py-2 transition">Contact Us</a>
+    <img src="./../Images/etoiles-de-noel 1.png" class="w-16 mb-10" alt="">
+  </header>
+  <!-- conteneur principal:conteneur+image -->
+  <div class="w-full ">
+    <!-- formulaire -->
+    <div class="flex flex-col ">
+      <p class="text-center my-6 w-full ">
+        Envie d'un burger savoureux sans te deplacer, Burger Express debarque a toute vitesse.<br>
+        <span class="text-mustard font-semibold">Burger Express - Le gout sans attendre</span>
+        <div class="w-full flex flex-row justify-center ml-[400px]">
+        <img src="./../Images/decor-de-noel 2.png" class="hidden md:block w-14 mb-4" alt="">
+        </div>
+      </p>
+      <div class="  w-full flex md:gap-32 justify-center px-10">
+        <form   class="flex flex-col gap-4 w-full md:w-1/2  px-2 ">
+          <div class="flex flex-col sm:flex-row gap-4 sm:gap-10 w-[100%]">
+            <div class="md:w-1/2">
+              <label for="">NOM</label><br>
+              <input type="text" id="nom_contact" class="border border-gray-300 rounded p-2  w-full outline-none" required>
+            </div>
+            <div class="md:w-1/2">
+              <label for="">PRENOM</label><br>
+              <input type="text" id="prenom_contact" class="border border-gray-300 rounded p-2  w-full outline-none" required>
+            </div>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-10 w-[100%]">
+            <div class="md:w-1/2">
+              <label for="">ADRESSE</label><br>
+              <input type="text" id="adresse_contact" class="rounded border border-gray-300 py-2 sm:w-54 px-2  w-full outline-none" required>
+            </div>
+            <div class="md:w-1/2">
+              <label for="">TELEPHONE</label><br>
+              <input type="text" id="telephone_contact" class="py-2 px-2 rounded border border-gray-300 w-full outline-none" required>
+            </div>
+          </div>
+          <div class="flex flex-col w-[100%]">
+            <label for=""> QUE VOULEZ-VOUS</label>
+            <textarea name="" id="message_contact" class="rounded border border-gray-300  px-10 w-full outline-none" rows="4" required minlength="5">
+
+          </textarea>
+          </div>
+          <button onclick="SendContactInfo()" type="button"
+            class="bg-mustard hover:bg-red-express text-white py-3 w-36 rounded-md outline-none">Envoyer</button>
+        </form>
+
+        <!-- image -->
+        <div class="hidden md:flex">
+          <img src="./../Images/burger_person.png" alt="" class="w-64 rounded-lg h-">
+        </div>
+      </div>
+    </div>
+
+    <!-- pied de page -->
+    <div class="w-full flex flex-col md:justify-around items-center text-center mx-auto md:flex-row py-8 mt-10 border-t gap-10 px-10">
+      <div>
+        <div class="font-semibold"><i class="fas fa-phone-alt text-deep-black mr-2"></i>Call Us</div>
+        <div>674606328</div>
+      </div>
+      <div>
+        <div class="font-semibold"><i class="fas fa-envelope text-deep-black mr-2"></i>Send Us an Email</div>
+        <div>BurgerExpress@gmail.com</div>
+      </div>
+      <div>
+        <div class="font-semibold"><i class="fas fa-map-marker-alt text-deep-black mr-2"></i>Ours Offices</div>
+        <div>Douala, Cameroun</div>
+      </div>
+    </div>
+</section>
+<!-- ✅ FOOTER (passé en FLEX) -->
+<footer class="bg-footer-gray text-white mt-12 px-3">
+  <div class="w-full  px-4 py-10 flex flex-col md:flex-row justify-between gap-6 text-[18px]">
+    <!-- Colonne 1 -->
+    <div class="flex flex-col space-y-2">
+      <div class="flex items-center space-x-2">
+        <img src="../Images/logo.png" class="w-32 h-12 md:w-40 md:h-16" >
+      </div>
+      <p class="flex items-center">
+        <i class="fas fa-map-marker-alt text-mustard mr-2"></i> Douala, Cameroun
+      </p>
+    </div>
+    <!-- Colonne 2 -->
+    <div class="flex flex-col space-y-2">
+      <h3 class="text-white font-semibold">Contact</h3>
+      <p class="flex items-center">
+        <i class="fas fa-envelope text-mustard mr-2"></i> burgerexpress@gmail.com
+      </p>
+      <p class="flex items-center">
+        <i class="fas fa-phone-alt text-mustard mr-2"></i> 674606328 / 695220691
+      </p>
+    </div>
+    <!-- Colonne 3 -->
+    <div class="flex flex-col space-y-2">
+      <h3 class="text-white font-semibold">Réseaux sociaux</h3>
+      <div class="flex space-x-4 text-mustard text-lg">
+        <a href="#"><i class="fab fa-instagram hover:text-white"></i></a>
+        <a href="#"><i class="fab fa-facebook hover:text-white"></i></a>
+        <a href="#"><i class="fab fa-tiktok hover:text-white"></i></a>
+        <a href="#"><i class="fab fa-whatsapp hover:text-white"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="border-t border-mustard text-xs text-center py-3 px-4 flex flex-col md:flex-row justify-between items-center">
+    <span>&copy; 2025 Burger Express</span>
+    <span >Tout droit réservé • Designé par <a target="_blank" class="text-mustard" href="http://dimidevofficiel.vercel.app">Dimidev</a></span>
+  </div>
+</footer>
+
+<script src="../JS/script.js"></script>
+</body>
+</html>
